@@ -1,0 +1,57 @@
+body {
+    font-family: 'Roboto Mono', monospace;
+    background-color: white;
+    color: black;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #f0f0f0;
+    padding: 10px;
+    text-align: center;
+}
+
+header nav a {
+    margin: 0 20px;
+    text-decoration: none;
+    color: black;
+}
+
+h1 {
+    text-align: center;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.gallery-item {
+    margin: 20px;
+}
+
+.gallery-item img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project img, .project video {
+    width: 100%;
+    height: auto;
+}
+
+.cv, .resources {
+    margin: 20px;
+}
+
+.cv p, .resources ul {
+    text-align: center;
+}
+
+.resources ul {
+    list-style-type: none;
+}
