@@ -1,20 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project 1</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Den Nye Romantisme - Ida Fisker</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Roboto Mono', monospace;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start; /* Aligns from the top */
+      min-height: 100vh;
+      background-color: #f4f4f4;
+    }
+
+    .project-container {
+      max-width: 900px;
+      margin: 40px;
+      padding: 20px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      margin-top: 80px; /* Adjusts the top margin to avoid being cut off */
+    }
+
+    .project-container h1 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    .project-container p {
+      font-size: 0.9em;
+      line-height: 1.6;
+      text-align: justify;
+      margin-bottom: 20px;
+      margin-left: 20px;  /* Adds margin to left and right of the text */
+      margin-right: 20px;
+    }
+
+    .project-container img,
+    .project-container video {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 20px;
+      border-radius: 8px;
+    }
+
+    /* Specific image to be placed at the top */
+    .project-container .top-image {
+      width: 100%;
+      height: auto;
+      margin-bottom: 20px;
+      border-radius: 8px;
+    }
+
+    .images-container {
+      margin-top: 20px; /* Adds spacing between the text and images */
+    }
+
+    .images-container img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 20px;
+      border-radius: 8px;
+    }
+
+    .return-button {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      padding: 8px 15px;
+      background-color: white;
+      color: black;
+      border: 1px solid black;
+      font-size: 0.9em;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .return-button:hover {
+      background-color: #f1f1f1;
+    }
+
+    a {
+      display: inline-block;
+      margin-top: 20px;
+      font-size: 1.2em;
+      color: #333;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Video specific styles */
+    .project-container video {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      max-height: 75vh; /* Ensures the video height doesn't exceed 75% of the viewport */
+      object-fit: contain; /* Ensures the video maintains its aspect ratio */
+      margin-bottom: 20px;
+      border-radius: 8px;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="index.html">Projects</a>
-            <a href="cv.html">CV</a>
-            <a href="resources.html">Resources</a>
-        </nav>
-    </header>
+
+  <!-- Return to Main Page button -->
+  <button class="return-button" onclick="window.location.href='index.html';">Return to Main Page</button>
+
+  <div class="project-container">
+    <h1>Data Crystal Garden</h1>
+    <!-- Image at the top of the page -->
+    <img src="data.crystal.garden.full.installation.1.jpg" alt="Top Image" class="top-image">
+</header>
 
     <div class="project">
         <h1>Project 1 Title</h1>
@@ -28,6 +136,23 @@ danner grundlag for både vækst og modstandskraft. Jeg ser udstillingen som en 
 at opdage forbindelserne mellem sig selv og deres omgivelser – en undersøgelse af de indre og ydre landskaber.</p>
         <img src="image-placeholder2.jpg" alt="Project 1 Image">
         
+
+    <!-- Images Container (No Grid, images retain their size and quality) -->
+    <div class="images-container">
+      <img src="data.crystal.garden.zoom2.jpg" alt="Image 2">
+      <img src="data.crystal.garde.zoom3.jpg" alt="Image 3">
+      <img src="data.crystal.garden.full.instalation.2.jpg" alt="Image 4">
+      <img src="image-placeholder5.jpg" alt="Image 5">
     </div>
+
+    <!-- Video (No cropping) -->
+    <video controls>
+      <source src="data.crystal.garden.video.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <!-- Link to another page or resource -->
+   
+  </div>
+
 </body>
-</html>
