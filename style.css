@@ -1,57 +1,83 @@
 body {
-    font-family: 'Roboto Mono', monospace;
-    background-color: white;
-    color: black;
-    margin: 0;
-    padding: 0;
+  font-family: 'Roboto Mono', monospace;
+  background-color: white;
+  color: black;
+  margin: 0;
+  padding: 0;
 }
 
 header {
-    background-color: #f0f0f0;
-    padding: 10px;
-    text-align: center;
+  background-color: #f0f0f0;
+  padding: 10px 0;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 header nav a {
-    margin: 0 20px;
-    text-decoration: none;
-    color: black;
+  margin: 0 20px;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+header nav a:hover {
+  text-decoration: underline;
 }
 
 h1 {
-    text-align: center;
+  text-align: center;
+  margin-top: 20px;
 }
 
 .gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
 }
 
 .gallery-item {
-    margin: 20px;
+  flex: 1 1 200px;
+  max-width: 250px;
+  overflow: hidden;
+  border-radius: 10px;
+  transition: transform 0.2s ease;
+}
+
+.gallery-item:hover {
+  transform: scale(1.03);
 }
 
 .gallery-item img {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  object-fit: cover;
 }
 
-.project img, .project video {
-    width: 100%;
-    height: auto;
+.project img,
+.project video {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
 }
 
-.cv, .resources {
-    margin: 20px;
+.cv,
+.resources {
+  padding: 20px;
 }
 
-.cv p, .resources ul {
-    text-align: center;
+.cv p,
+.resources ul {
+  text-align: center;
 }
 
 .resources ul {
-    list-style-type: none;
+  list-style-type: none;
+  padding: 0;
 }
+
