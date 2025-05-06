@@ -26,6 +26,7 @@
       border-radius: 10px;
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
       text-align: center;
+      margin-top: 80px; /* Adjusts the top margin to avoid being cut off */
     }
 
     .project-container h1 {
@@ -38,6 +39,8 @@
       line-height: 1.6;
       text-align: justify;
       margin-bottom: 20px;
+      margin-left: 20px;  /* Adds margin to left and right of the text */
+      margin-right: 20px;
     }
 
     .project-container img,
@@ -49,15 +52,22 @@
       border-radius: 8px;
     }
 
-    .images-container {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
+    /* Specific image to be placed at the top */
+    .project-container .top-image {
+      width: 100%;
+      height: auto;
       margin-bottom: 20px;
+      border-radius: 8px;
+    }
+
+    .images-container {
+      margin-top: 20px; /* Adds spacing between the text and images */
     }
 
     .images-container img {
       width: 100%;
+      height: auto;
+      margin-bottom: 20px;
       border-radius: 8px;
     }
 
@@ -99,22 +109,24 @@
 
   <div class="project-container">
     <h1>Data Crystal Garden</h1>
+    <!-- Image at the top of the page -->
+    <img src="data.crystal.garden.full.installation.1.jpg" alt="Top Image" class="top-image">
+
     <p>The Data Crystal Garden. GRA Graduation exhibit. 2024.<br>
       You are looking at a garden of data crystals. They have all processed “radical” data, been used for hacking or had Pegasus on them. Pegasus is an advanced surveillance bug used by many governments. In the ethereal landscapes of digital existence, memory takes on multifaceted forms, residing within the confines of hard drives and the transient spaces of RAM. Minerals, ancient and timeless, find new purpose as they crystallize around the computers' bodies — a reflection of the social and political fabric interwoven with our virtual interactions. In neo-spiritualism, crystals are often heralded as conductors of energy; if this is the case, my data crystal garden is growing red politics. As all the computer parts given to me by my community hold their red data, hard drives become vessels for ideologies, storing not just data but the resistance of their actions and research. However, as computers transcend their utilitarian origins, they ensnare us in a tech feudalism, monopolizing our lives. Yet, amidst this digital dominion, rebellion takes form—a defiance encapsulated in the freezing of memories within crystals, nature reclaims. Here, the computers used body grows as a relic of resistance, a testament to the struggle against ephemeral yet traceable dangers lurking. The digital landscape — my crystal garden where memory intertwines with activism, art, and magic, forging a new narrative of resistance in the age of technology. Here, within the crystalline depths of data, lies the essence of our digital existence; we cannot deny the physicality of our overlords.<br>
       Go a bit closer, put your ear to the wall and listen to the soundpiece. The sound piece is an epic poem in line with oral traditions; it tells the story of a hero who faces obstacles. The Pegasus is his opponent, alongside the people whose faces are captured by the screens. His thoughts and actions are engulfed and grow in this crystal garden, alongside other rebels..<br>
       Made from Copper, donated computers, radical data, silica crystals, Epsom, water, glass, willpower, poetry, community, wool, concrete, and zinc.<br>
       Installation of Variable size.</p>
 
-    <!-- Images Container (5 images) -->
+    <!-- Images Container (No Grid, images retain their size and quality) -->
     <div class="images-container">
-      <img src="data.crystal.garden.full.installation.1.jpg" alt="Image 1">
       <img src="data.crystal.garden.zoom2.jpg" alt="Image 2">
       <img src="data.crystal.garde.zoom3.jpg" alt="Image 3">
       <img src="data.crystal.garden.full.instalation.2.jpg" alt="Image 4">
       <img src="image-placeholder5.jpg" alt="Image 5">
     </div>
 
-    <!-- Video -->
+    <!-- Video (No cropping) -->
     <video controls>
       <source src="data.crystal.garden.video.mp4" type="video/mp4">
       Your browser does not support the video tag.
