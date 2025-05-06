@@ -5,44 +5,208 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projects by Ida Fisker</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Roboto Mono', monospace;
+      background-color: white;
+      color: black;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #f0f0f0;
+      padding: 10px;
+      text-align: center;
+    }
+
+    header nav a {
+      margin: 0 20px;
+      text-decoration: none;
+      color: black;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .gallery-item {
+      margin: 20px;
+    }
+
+    .gallery-item img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Lightbox styles */
+    #lightbox {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0,0,0,0.8);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    #lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+    }
+
+    #lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 3em;
+      color: white;
+      cursor: pointer;
+    }
+
+    /* Responsive layout */
+    @media (max-width: 600px) {
+      .gallery {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .gallery-item {
+        max-width: 90%;
+      }
+
+      header nav a {
+        display: block;
+        margin: 10px 0;
+      }
+
+      h1 {
+        font-size: 1.5em;
+      }
+    }
+
+    /* Dark mode */
+    #dark-toggle {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      padding: 5px 10px;
+      font-size: 0.9em;
+      cursor: pointer;
+    }
+
+    body.dark-mode {
+      background-color: #121212;
+      color: #e0e0e0;
+    }
+
+    body.dark-mode header {
+      background-color: #1e1e1e;
+    }
+
+    body.dark-mode header nav a {
+      color: #e0e0e0;
+    }
+
+    body.dark-mode #lightbox-close {
+      color: #f0f0f0;
+    }
+  </style>
 </head>
 <body>
+
   <header>
     <nav>
       <a href="index.html">Projects</a>
       <a href="cv.html">CV</a>
       <a href="resources.html">Resources</a>
     </nav>
+    <button id="dark-toggle">🌙 Toggle Dark Mode</button>
   </header>
 
-  <div class="gallery">
+  <h1>Projects by Ida Fisker</h1>
 
+  <div class="gallery">
     <div class="gallery-item">
       <a href="project1.html">
-        <img src="de.nye.romantisme.zoom1.JPG" alt="Project 1">
+        <img src="de.nye.romantisme.zoom1.JPG" alt="Project 1" />
       </a>
     </div>
-
     <div class="gallery-item">
       <a href="project2.html">
-        <img src="date.crystal.garden.zoom1.jpg" alt="Project 2">
+        <img src="date.crystal.garden.zoom1.jpg" alt="Project 2" />
       </a>
     </div>
-
     <div class="gallery-item">
       <a href="project3.html">
-        <img src="map.of.action.jpg" alt="Project 3">
+        <img src="map.of.action.jpg" alt="Project 3" />
       </a>
     </div>
-
     <div class="gallery-item">
       <a href="project4.html">
-        <img src="star.body.jpg" alt="Project 4">
+        <img src="star.body.jpg" alt="Project 4" />
       </a>
     </div>
-
   </div>
+
+  <!-- Lightbox overlay -->
+  <div id="lightbox">
+    <span id="lightbox-close">&times;</span>
+    <img id="lightbox-img" src="" alt="Expanded Image" />
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    // Lightbox functionality
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const closeBtn = document.getElementById("lightbox-close");
+
+    document.querySelectorAll('.gallery-item img').forEach(img => {
+      img.addEventListener('click', e => {
+        if (!img.closest('a')) {
+          lightbox.style.display = 'flex';
+          lightboxImg.src = img.src;
+        }
+      });
+    });
+
+    closeBtn.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+      lightboxImg.src = '';
+    });
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        lightbox.style.display = 'none';
+        lightboxImg.src = '';
+      }
+    });
+
+    // Dark mode toggle
+    document.getElementById('dark-toggle').addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+    });
+  </script>
 </body>
 </html>
+
 
