@@ -21,38 +21,37 @@
     }
 
     header nav a {
-      margin: 0 20px;
+      margin: 0 15px;
       text-decoration: none;
       color: black;
     }
 
     h1 {
       text-align: center;
-      margin-top: 30px;
     }
 
     .gallery {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
       gap: 30px;
-      padding: 40px;
-      justify-items: center;
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
     .gallery-item img {
-      width: 300px;
-      height: 300px;
+      width: 100%;
+      height: 250px;
       object-fit: cover;
-      cursor: pointer;
       border-radius: 5px;
       transition: transform 0.3s ease;
+      cursor: pointer;
     }
 
     .gallery-item img:hover {
       transform: scale(1.05);
     }
 
-    /* Lightbox styles */
     #lightbox {
       position: fixed;
       top: 0; left: 0;
@@ -79,28 +78,6 @@
       color: white;
       cursor: pointer;
     }
-
-    /* Responsive layout */
-    @media (max-width: 900px) {
-      .gallery {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 600px) {
-      .gallery {
-        grid-template-columns: 1fr;
-      }
-
-      header nav a {
-        display: block;
-        margin: 10px 0;
-      }
-
-      h1 {
-        font-size: 1.5em;
-      }
-    }
   </style>
 </head>
 <body>
@@ -110,6 +87,7 @@
       <a href="index.html">Projects</a>
       <a href="cv.html">CV</a>
       <a href="resources.html">Resources</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </header>
 
@@ -143,25 +121,22 @@
     </div>
     <div class="gallery-item">
       <a href="project6.html">
-        <img src="Incantation.ll.3.jpeg" alt="Project 6" />
+        <img src="example6.jpg" alt="Project 6" />
       </a>
     </div>
-  </div>
-   <div class="gallery-item">
+    <div class="gallery-item">
       <a href="project7.html">
-        <img src="Powers.of.the.strange.and.the.known.2.jpg" alt="Project 7" />
+        <img src="example7.jpg" alt="Project 7" />
       </a>
     </div>
   </div>
 
-  <!-- Lightbox overlay -->
   <div id="lightbox">
     <span id="lightbox-close">&times;</span>
     <img id="lightbox-img" src="" alt="Expanded Image" />
   </div>
 
   <script>
-    // Lightbox functionality
     const lightbox = document.getElementById("lightbox");
     const lightboxImg = document.getElementById("lightbox-img");
     const closeBtn = document.getElementById("lightbox-close");
@@ -187,6 +162,5 @@
       }
     });
   </script>
-
 </body>
 </html>
