@@ -70,15 +70,19 @@
   <div class="resources">
     <h1>Archive of Links</h1>
     <ul id="link-list">
-      <li><a href="https://carpenter.center/exhibitions/candice-lin-seeping-rotting-resting-weeping" target="_blank">Candice Lin:-seeping-rotting-resting-weeping</a></li>
-      <li><a href="https://www.artsy.net/artwork/candice-lin-system-for-a-stain" target="_blank">Candice Lin : System of a Stain</a></li>
-      <li><a href="https://www.annarubin.at/index.html" target="_blank">Anna Rubin , Maker of poetic Kites</a></li>
-      <li><a href="http://myartda.com/" target="_blank">MinJeong An, maker of Graphs that allow for compexity</a></li>
-      <li><a href="https://www.christineodlund.se/" target="_blank">Christine Odlund, Botanical spiritualist</a></li>
-      <li><a href="https://carlottolinde.com/" target="_blank">Carl Otto Linde, Transmuting and Transforming the potential of glass fiber</a></li>
-      <li><a href="https://www.youtube.com/watch?v=hW8cSJyNqvw&list=PLOAFgXcJkZ2ygn1m9t3deefXTZXOxkvM2&index=2&ab_channel=OxfordUnion" target="_blank">Julia Fox at the Oxford union Q and A (ignore the comment section)</a></li>
-      <li><a href="https://alexandraphillips.net/" target="_blank">Alexandra Phillips, finds lived experience in overlooked materials</a></li>  
-      <li><a href="https://yveswoffenden.hotglue.me/" target="_blank">Yves Woffenden, Maker of glass, liquid mirrors and roaring videos</a></li>  
+      <li><a href="https://carpenter.center/exhibitions/candice-lin-seeping-rotting-resting-weeping" target="_blank">Candice Lin: Seeping-Rotting-Resting-Weeping</a></li>
+      <li><a href="https://www.artsy.net/artwork/candice-lin-system-for-a-stain" target="_blank">Candice Lin: System of a Stain</a></li>
+      <li><a href="https://www.annarubin.at/index.html" target="_blank">Anna Rubin, Maker of Poetic Kites</a></li>
+      <li><a href="http://myartda.com/" target="_blank">MinJeong An, Maker of Graphs That Allow for Complexity</a></li>
+      <li><a href="https://www.christineodlund.se/" target="_blank">Christine Odlund, Botanical Spiritualist</a></li>
+      <li><a href="https://carlottolinde.com/" target="_blank">Carl Otto Linde, Transmuting and Transforming the Potential of Glass Fiber</a></li>
+      <li><a href="https://www.youtube.com/watch?v=hW8cSJyNqvw&list=PLOAFgXcJkZ2ygn1m9t3deefXTZXOxkvM2&index=2&ab_channel=OxfordUnion" target="_blank">Julia Fox at the Oxford Union Q and A (Ignore the Comment Section)</a></li>
+      <li><a href="https://alexandraphillips.net/" target="_blank">Alexandra Phillips, Finds Lived Experience in Overlooked Materials</a></li>  
+      <li><a href="https://yveswoffenden.hotglue.me/" target="_blank">Yves Woffenden, Maker of Glass, Liquid Mirrors and Roaring Videos</a></li>  
+      <li><a href="https://mohrizm.net/" target="_blank">Yuko Mohri, Maker of Jumping Fruit and Swinging Lights</a></li>  
+      <li><a href="https://www.anickayistudio.biz/" target="_blank">Anicka Yi, The Material Is Everything</a></li> 
+      <li><a href="https://www.outsiderartfair.com/artists/guo-fengyi?view=slider" target="_blank">Guo Fengyi, The Spirit in Drawing Form</a></li>
+      <li><a href="https://www.biancabondi.com/" target="_blank">Bianca Bondi, Master of Salts and Creator of Landscapes</a></li>
     </ul>
   </div>
 
@@ -88,5 +92,16 @@
     const items = Array.from(list.getElementsByTagName('li'));
 
     items.sort((a, b) => {
-      const textA = a.textContent.trim().to
+      const textA = a.textContent.trim().toLowerCase();
+      const textB = b.textContent.trim().toLowerCase();
+      return textA.localeCompare(textB);
+    });
+
+    // Clear and re-add sorted items
+    list.innerHTML = '';
+    items.forEach(item => list.appendChild(item));
+  </script>
+</body>
+</html>
+
 
